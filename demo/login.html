@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAGI//SYSTEM — Login</title>
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<!-- Seluruh markup, style, dan logika dibangun oleh login.js.
+     config.js dimuat lebih dulu: gerbang di dalamnya SENGAJA lolos untuk
+     login.html (tidak me-redirect), tapi window.MAGI tetap disiapkan
+     supaya login.js tahu alamat endpoint POST /webhook/login. -->
+<div id="app"></div>
+<!-- MODE DEMO (portofolio): magi-api, MySQL & n8n disimulasikan di browser — lihat _demo/ -->
+<script src="./_demo/util.js"></script>
+<script src="./_demo/seed.js"></script>
+<script src="./_demo/pdf.js"></script>
+<script src="./_demo/api.js"></script>
+<script src="./_demo/ui.js"></script>
+<script src="./config.js"></script>
+<script src="./login.js"></script>
+</body>
+</html>

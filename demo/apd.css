@@ -1,0 +1,307 @@
+/* apd.css — gaya halaman APD (apd.html + apd.js).
+   Tema "warm space", selaras simper.css / afl.css. */
+:root{
+  --void:#0a0806; --panel:#181310; --panel2:#1f1814;
+  --line:rgba(244,234,219,.10); --line-strong:rgba(255,106,31,.38);
+  --cream:#F4EADB; --cream-dim:#bfae9a; --cream-mute:#7f7264;
+  --orange:#FF6A1F; --amber:#FFB03A; --red:#E23B32; --rust:#8f3d18;
+  --ok:#7FD6A6; --warn:#FFB03A; --crit:#E23B32; --blue:#6FB7E8; --kuning:#FFD45A;
+  --sans:ui-sans-serif,"Inter","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:"DejaVu Sans Mono","Cascadia Code","JetBrains Mono",ui-monospace,"Courier New",monospace;
+  --glow:0 0 18px rgba(255,106,31,.35);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;height:100%}
+body{background:var(--void);color:var(--cream);font-family:var(--sans);font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+#stars{position:fixed;inset:0;z-index:0;pointer-events:none}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:
+  radial-gradient(900px 520px at 78% -12%, rgba(255,106,31,.20), transparent 62%),
+  radial-gradient(760px 420px at -8% 108%, rgba(226,59,50,.16), transparent 58%),
+  radial-gradient(1200px 700px at 50% 130%, rgba(255,176,58,.07), transparent 60%)}
+[hidden]{display:none!important}
+
+.wrap{position:relative;z-index:1;max-width:1480px;margin:0 auto;padding:22px 24px 48px}
+@media(max-width:560px){.wrap{padding:16px 16px 40px}}
+
+/* ---------- HEADER ---------- */
+header.hud{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:14px 20px;margin-bottom:18px;
+  border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg,rgba(255,106,31,.07),rgba(10,8,6,.35));
+  box-shadow:inset 0 1px 0 rgba(244,234,219,.06),0 12px 40px rgba(0,0,0,.45)}
+.mark{width:46px;height:46px;flex:0 0 auto;filter:drop-shadow(0 0 10px rgba(255,106,31,.55))}
+.brand{display:flex;flex-direction:column;line-height:1.1}
+.brand .logo{font-size:20px;font-weight:800;letter-spacing:.14em;color:var(--cream)}
+.brand .logo b{color:var(--orange);font-weight:800}
+.brand .sub{font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--cream-mute);margin-top:3px}
+.hud-spacer{flex:1}
+.back,.rfr{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;
+  text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:8px 15px;background:rgba(244,234,219,.04);color:var(--cream-dim);transition:.15s}
+.back:hover,.rfr:hover:not(:disabled){color:var(--cream);border-color:var(--line-strong);box-shadow:var(--glow)}
+.rfr:disabled{opacity:.45;cursor:wait}
+.pill{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+  border:1px solid var(--line);border-radius:999px;padding:6px 13px;background:rgba(244,234,219,.04);color:var(--cream-dim)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--cream-mute);flex:0 0 auto}
+.dot.on{background:var(--ok);box-shadow:0 0 10px var(--ok)}
+.dot.off{background:var(--crit);box-shadow:0 0 10px rgba(226,59,50,.7)}
+.dot.wait{background:var(--warn);box-shadow:0 0 10px rgba(255,176,58,.7);animation:pulse 1.2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.lead{margin:0 0 18px;padding:12px 16px;border:1px solid var(--line);border-radius:12px;background:rgba(244,234,219,.03);
+  font-size:12.5px;line-height:1.7;color:var(--cream-dim)}
+.lead b{color:var(--cream)}
+
+/* ---------- TATA LETAK: input | antrean | cetak ---------- */
+.deck{display:grid;grid-template-columns:360px minmax(0,1fr) 300px;grid-template-areas:"input antre cetak";gap:20px;align-items:start}
+@media(max-width:1280px){.deck{grid-template-columns:minmax(0,1fr) 300px;grid-template-areas:"input cetak" "antre cetak"}}
+@media(max-width:900px){.deck{grid-template-columns:minmax(0,1fr);grid-template-areas:"input" "antre" "cetak"}}
+#pInput{grid-area:input}
+#pAntre{grid-area:antre}
+#pCetak{grid-area:cetak}
+@media(min-width:901px){#pCetak{position:sticky;top:16px}}
+
+/* ---------- PANEL ---------- */
+.panel{border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg,var(--panel),var(--panel2));
+  box-shadow:0 10px 34px rgba(0,0,0,.4);overflow:hidden;min-width:0}
+.p-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:13px 18px;border-bottom:1px solid var(--line);
+  background:linear-gradient(90deg,rgba(255,106,31,.10),transparent)}
+.p-head h2{margin:0;font-family:var(--mono);font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--cream)}
+.p-head .idx{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--orange);white-space:nowrap}
+.p-head .spacer{flex:1}
+.p-head .cnt{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--cream-mute);white-space:nowrap}
+.p-body{padding:18px}
+.sub-h{margin:18px 0 9px;font-family:var(--mono);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--cream-mute)}
+.sub-h:first-child{margin-top:0}
+
+/* ---------- FORM ---------- */
+.fld{display:flex;flex-direction:column;gap:6px;min-width:0}
+.fld label{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--cream-mute)}
+.cari{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px}
+.inp,.fin{width:100%;font-family:var(--sans);font-size:13.5px;color:var(--cream);background:rgba(244,234,219,.04);color-scheme:dark;
+  border:1px solid var(--line);border-radius:9px;padding:9px 12px;transition:.15s}
+.inp::placeholder,.fin::placeholder{color:var(--cream-mute)}
+.inp:focus,.fin:focus{outline:none;border-color:var(--line-strong);box-shadow:0 0 0 3px rgba(255,106,31,.12)}
+.hint{font-family:var(--mono);font-size:10.5px;color:var(--cream-mute);margin-top:9px;letter-spacing:.04em;line-height:1.6}
+.req{color:var(--orange)}
+
+.btn{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;white-space:nowrap;
+  border:1px solid var(--line);border-radius:9px;padding:10px 18px;background:transparent;color:var(--cream-dim);transition:.15s}
+.btn:hover:not(:disabled){color:var(--cream);border-color:var(--line-strong)}
+.btn.primary{background:linear-gradient(180deg,var(--orange),var(--rust));border-color:transparent;color:#1a0e06;font-weight:700}
+.btn.primary:hover:not(:disabled){filter:brightness(1.1);box-shadow:var(--glow)}
+.btn:disabled{opacity:.42;cursor:not-allowed}
+.btn.bahaya{background:linear-gradient(180deg,var(--red),#8a1f19);border-color:transparent;color:#fff1ee;font-weight:700}
+.btn.bahaya:hover:not(:disabled){filter:brightness(1.1);box-shadow:0 0 18px rgba(226,59,50,.45)}
+.act{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;white-space:nowrap;
+  border:1px solid var(--line-strong);border-radius:999px;padding:5px 12px;background:rgba(255,106,31,.10);color:var(--amber);transition:.15s}
+.act:hover:not(:disabled){color:var(--cream);background:rgba(255,106,31,.18);box-shadow:var(--glow)}
+.act:disabled{opacity:.45;cursor:not-allowed}
+.act:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+
+/* hasil cari karyawan */
+.plist{display:flex;flex-direction:column;gap:7px;margin-top:12px;max-height:300px;overflow-y:auto}
+.plead{font-family:var(--mono);font-size:10.5px;color:var(--cream-dim);letter-spacing:.04em;margin-top:12px}
+.plead b{color:var(--amber)}
+.pitem{display:flex;align-items:center;gap:12px;text-align:left;cursor:pointer;font:inherit;color:var(--cream);min-width:0;
+  border:1px solid var(--line);border-radius:10px;padding:9px 12px;background:rgba(244,234,219,.03);transition:.15s}
+.pitem:hover{border-color:var(--line-strong);background:rgba(255,106,31,.09)}
+.pitem:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.pitem .col{display:flex;flex-direction:column;min-width:0;gap:1px;flex:1}
+.pitem .n{font-weight:600;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pitem .i{font-family:var(--mono);font-size:11px;color:var(--amber);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pitem .arw{color:var(--orange);font-family:var(--mono)}
+.none{font-family:var(--mono);font-size:11px;color:var(--cream-mute);letter-spacing:.04em;line-height:1.7}
+
+/* karyawan terpilih */
+.kar{display:flex;align-items:center;gap:12px;margin-top:12px;padding:11px 13px;border-radius:11px;
+  border:1px solid rgba(255,212,90,.45);background:rgba(255,212,90,.06)}
+.kar .ava{width:40px;height:40px;flex:0 0 auto;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:14px;font-weight:700;color:var(--kuning);border:1px solid rgba(255,212,90,.5)}
+.kar .col{display:flex;flex-direction:column;min-width:0;flex:1}
+.kar .n{font-weight:700;font-size:14px;color:var(--cream);word-break:break-word}
+.kar .i{font-family:var(--mono);font-size:11px;color:var(--amber);word-break:break-word}
+
+/* daftar centang APD di form input */
+.cekl{display:flex;flex-direction:column;gap:6px}
+.cekl label{display:flex;align-items:center;gap:10px;padding:8px 11px;border-radius:9px;cursor:pointer;
+  border:1px solid var(--line);background:rgba(244,234,219,.025);transition:.15s}
+.cekl label:hover{border-color:var(--line-strong)}
+.cekl label.on{border-color:rgba(127,214,166,.5);background:rgba(127,214,166,.07)}
+.cekl label.mati{cursor:not-allowed;opacity:.5}
+.cekl input{width:16px;height:16px;margin:0;accent-color:var(--ok);flex:0 0 auto}
+.cekl .n{flex:1;min-width:0;font-size:13px;color:var(--cream)}
+.cekl .t{font-family:var(--mono);font-size:10.5px;color:var(--cream-mute)}
+.cekl .s{font-family:var(--mono);font-size:9.5px;color:var(--amber);white-space:nowrap}
+.aksi{display:flex;margin-top:16px}
+.aksi .btn{flex:1}
+
+/* kelola master APD */
+.kelola{margin-top:18px;border-top:1px dashed var(--line);padding-top:12px}
+.kelola summary{cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--cream-dim);list-style:none}
+.kelola summary::-webkit-details-marker{display:none}
+.kelola summary::before{content:"▸ ";color:var(--orange)}
+.kelola[open] summary::before{content:"▾ "}
+.kelola summary:hover{color:var(--cream)}
+.mform{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;margin-top:12px}
+.mform .btn{grid-column:1 / -1;padding:8px 14px;font-size:10px}
+.mlist{list-style:none;margin:12px 0 0;padding:0;max-height:240px;overflow-y:auto}
+.mlist li{display:flex;align-items:center;gap:10px;padding:7px 2px;border-bottom:1px solid var(--line)}
+.mlist li:last-child{border-bottom:none}
+.mlist .n{flex:1;min-width:0;font-size:12.5px;color:var(--cream)}
+.mlist .t{display:block;font-family:var(--mono);font-size:10px;color:var(--cream-mute)}
+.mlist .u{font-family:var(--mono);font-size:9.5px;color:var(--cream-mute);white-space:nowrap}
+.ibtn{width:28px;height:28px;flex:0 0 auto;cursor:pointer;font-size:13px;line-height:1;border-radius:7px;
+  border:1px solid var(--line);background:rgba(244,234,219,.04);color:var(--cream-dim);transition:.15s}
+.ibtn:hover:not(:disabled){color:#ffb4ae;border-color:rgba(226,59,50,.6);background:rgba(226,59,50,.14)}
+.ibtn:disabled{opacity:.35;cursor:not-allowed}
+.ibtn:focus-visible{outline:2px solid var(--amber);outline-offset:1px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- ANTREAN (panel 02) ---------- */
+.tbl{overflow-x:auto;color-scheme:dark;scrollbar-color:rgba(244,234,219,.22) transparent}
+table.antre{width:100%;border-collapse:collapse;min-width:620px}
+.antre th{font-family:var(--mono);font-size:9px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;text-align:left;
+  color:var(--cream-mute);padding:9px 10px;border-bottom:1px solid var(--line);white-space:nowrap;background:rgba(244,234,219,.02)}
+.antre td{padding:9px 10px;border-bottom:1px solid var(--line);font-size:12.5px;color:var(--cream-dim);vertical-align:top}
+.antre tbody tr:last-child td{border-bottom:none}
+.antre tbody tr:hover td{background:rgba(244,234,219,.025)}
+.antre tr.on td{background:rgba(127,214,166,.06)}
+.antre tr.on td:first-child{box-shadow:inset 3px 0 0 var(--ok)}
+.antre .c-pilih{width:52px;text-align:center}
+.antre .c-no{width:40px;font-family:var(--mono);font-size:11px;color:var(--cream-mute)}
+.antre .c-a{width:1%;white-space:nowrap;text-align:right}
+.antre .nm{display:block;color:var(--cream);font-weight:600}
+.antre .kc{display:block;font-family:var(--mono);font-size:10.5px;color:var(--cream-mute);margin-top:2px}
+.antre .ap{display:block;color:var(--cream)}
+/* layar sempit: kolom No hilang, Status pindah ke bawah nama APD (.st-m) */
+.antre .st-m{display:none;margin-top:5px}
+@media(max-width:560px){table.antre{min-width:0}.antre .c-no,.antre .c-st{display:none}.antre .st-m{display:block}
+  .antre th,.antre td{padding:8px 6px}.antre .c-pilih{width:38px}}
+.pilih-k{display:inline-flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap}
+.pilih-k input,.c-pilih input{width:17px;height:17px;accent-color:var(--ok);cursor:pointer;margin:0}
+.c-pilih input:disabled,.pilih-k input:disabled{cursor:not-allowed}
+.bdg{display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;padding:2px 9px;border-radius:999px;white-space:nowrap;
+  border:1px solid var(--line);background:rgba(244,234,219,.05);color:var(--cream-mute)}
+.bdg.warn{color:var(--amber);border-color:rgba(255,176,58,.45);background:rgba(255,176,58,.08)}
+.empty{padding:30px 18px;font-size:13px;color:var(--cream-mute);text-align:center;line-height:1.7}
+
+/* ---------- DATA APD KARYAWAN (panel 04, selebar halaman) ---------- */
+#pData{margin-top:20px}
+#pData .p-body{padding-bottom:6px}
+.cari-data{display:flex;gap:10px;flex-wrap:wrap}
+.cari-data .inp{flex:1 1 260px;max-width:520px}
+#dInfo{margin-top:10px}
+#dInfo b{color:var(--amber);font-weight:600}
+table.antre.data{min-width:1120px}
+.data .c-cek input{width:17px;height:17px;margin:0;accent-color:var(--ok);cursor:pointer}
+.data .c-cek input:disabled{cursor:not-allowed;opacity:.55}
+.tgl-in{font-family:var(--mono);font-size:11.5px;color:var(--cream);background:rgba(244,234,219,.04);color-scheme:dark;
+  border:1px solid var(--line);border-radius:7px;padding:4px 6px;width:132px}
+.tgl-in:focus{outline:none;border-color:var(--line-strong);box-shadow:0 0 0 3px rgba(255,106,31,.12)}
+.tgl-in:disabled{opacity:.45;cursor:not-allowed}
+.tgl-in.salah{border-color:rgba(226,59,50,.7);box-shadow:0 0 0 3px rgba(226,59,50,.15)}
+.data .c-tgl .kc{white-space:nowrap}
+/* warna baris: merah = sudah EXP, kuning = hampir EXP, hijau = ceklis lengkap */
+.data tr.w-merah td{background:rgba(226,59,50,.10)}
+.data tr.w-merah td:first-child{box-shadow:inset 3px 0 0 var(--red)}
+.data tr.w-merah .c-tgl .kc{color:#ffb4ae}
+.data tr.w-kuning td{background:rgba(255,212,90,.08)}
+.data tr.w-kuning td:first-child{box-shadow:inset 3px 0 0 var(--kuning)}
+.data tr.w-kuning .c-tgl .kc{color:var(--kuning)}
+.data tr.w-hijau td{background:rgba(127,214,166,.07)}
+.data tr.w-hijau td:first-child{box-shadow:inset 3px 0 0 var(--ok)}
+.data tr.simpan{opacity:.55}
+.legenda{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;margin-top:10px;font-family:var(--mono);font-size:10px;color:var(--cream-dim)}
+.legenda .lg{display:inline-flex;align-items:center;gap:6px}
+.legenda .lg::before{content:"";width:10px;height:10px;border-radius:3px}
+.legenda .lg.merah::before{background:var(--red)}
+.legenda .lg.kuning::before{background:var(--kuning)}
+.legenda .lg.hijau::before{background:var(--ok)}
+.legenda .lg-t{flex-basis:100%;color:var(--cream-mute);line-height:1.6}
+#dInfo .h-merah,#dInfo .h-kuning{display:inline-block;margin-left:8px;padding:1px 8px;border-radius:999px;font-size:10px}
+#dInfo .h-merah{color:#ffb4ae;border:1px solid rgba(226,59,50,.55)}
+#dInfo .h-kuning{color:var(--kuning);border:1px solid rgba(255,212,90,.5)}
+.data .c-tgl{white-space:nowrap;width:1%}
+.data .c-cek{text-align:center;width:1%}
+.data .ya{color:var(--ok);font-weight:700}
+.data .kosong{color:var(--cream-mute)}
+.data .nm .bdg{margin-left:4px;vertical-align:1px}
+.bdg.ok{color:var(--ok);border-color:rgba(127,214,166,.45);background:rgba(127,214,166,.08)}
+.bdg.mute{color:var(--cream-mute);background:none}
+
+/* ---------- CETAK (panel 03) ---------- */
+.g-body{padding:18px}
+.stat{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border-radius:11px;border:1px solid var(--line);
+  border-left:3px solid var(--cream-mute);background:rgba(244,234,219,.03)}
+.stat .dot{margin-top:6px}
+.stat .t{font-weight:700;font-size:15px;color:var(--cream)}
+.stat .s{font-family:var(--mono);font-size:10.5px;color:var(--cream-mute);margin-top:3px;line-height:1.55}
+.stat.ok{border-left-color:var(--ok);background:rgba(127,214,166,.06)}
+.kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 14px;margin:16px 0 0;font-size:13px}
+.kv dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--cream-mute);padding-top:3px}
+.kv dd{margin:0;color:var(--cream);word-break:break-word}
+.nlist{margin:12px 0 0;padding:0;list-style:none;font-size:12px;color:var(--cream-dim)}
+.nlist li{padding:4px 0;border-bottom:1px dotted rgba(244,234,219,.09);display:flex;gap:8px}
+.nlist li .n{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.nlist li .j{font-family:var(--mono);font-size:10.5px;color:var(--amber)}
+.nlist .lagi{color:var(--cream-mute);font-family:var(--mono);font-size:10.5px}
+.gnote{margin-top:14px;padding:10px 12px;border-radius:10px;font-size:12px;line-height:1.6;border:1px solid var(--line)}
+.gnote b{color:var(--cream)}
+.gnote.amber{color:var(--amber);border-color:rgba(255,176,58,.45);background:rgba(255,176,58,.08)}
+.dispatch{display:flex;gap:10px;margin-top:16px}
+.dispatch .btn{flex:1}
+.g-foot{margin-top:12px;font-family:var(--mono);font-size:10px;line-height:1.7;color:var(--cream-mute)}
+.rw{margin-top:16px;border-top:1px dashed var(--line);padding-top:12px}
+.rw-h{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--cream-mute);margin-bottom:8px}
+.rw ul{list-style:none;margin:0;padding:0}
+.rw li{padding:6px 0;border-bottom:1px solid var(--line);font-size:12px;color:var(--cream-dim);line-height:1.5}
+.rw li:last-child{border-bottom:none}
+.rw li b{color:var(--cream);font-weight:600}
+.rw li .w{display:block;font-family:var(--mono);font-size:10px;color:var(--cream-mute)}
+
+/* ---------- STATE ---------- */
+.state{padding:40px 18px;text-align:center;color:var(--cream-mute);font-family:var(--mono);font-size:12px;letter-spacing:.1em;line-height:1.8}
+.state .big{font-size:34px;opacity:.5;margin-bottom:8px}
+.state b{color:var(--amber)}
+.spin{display:inline-block;width:26px;height:26px;border:3px solid rgba(255,106,31,.25);border-top-color:var(--orange);
+  border-radius:50%;animation:rot .8s linear infinite;margin-bottom:10px}
+@keyframes rot{to{transform:rotate(360deg)}}
+
+/* ---------- POPUP ---------- */
+/* z-index di atas tombol "Keluar" mengambang dari config.js (9999) */
+.mask{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;
+  background:rgba(5,4,3,.72);backdrop-filter:blur(3px)}
+body.modal-on{overflow:hidden}
+.modal{width:min(94vw,560px);max-height:calc(100vh - 40px);display:flex;flex-direction:column;overflow:hidden;
+  border:1px solid var(--line-strong);border-radius:16px;background:linear-gradient(180deg,var(--panel),var(--panel2));box-shadow:0 26px 70px rgba(0,0,0,.6)}
+.m-head{padding:15px 20px;border-bottom:1px solid var(--line);background:linear-gradient(90deg,rgba(255,106,31,.12),transparent)}
+.m-head h3{margin:0;font-family:var(--mono);font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--cream)}
+.m-sub{margin-top:5px;font-family:var(--mono);font-size:11px;color:var(--amber);word-break:break-word}
+.m-body{padding:18px 20px;overflow-y:auto;min-height:0;font-size:13px;line-height:1.65;color:var(--cream-dim)}
+.m-body b{color:var(--cream)}
+.m-err{margin:0 20px 14px;padding:10px 12px;border-radius:10px;font-size:12.5px;line-height:1.55;
+  color:#ffb4ae;border:1px solid rgba(226,59,50,.5);background:rgba(226,59,50,.10)}
+.m-foot{display:flex;gap:10px;justify-content:flex-end;padding:14px 20px;border-top:1px solid var(--line)}
+.m-list{margin:12px 0 0;padding:0;list-style:none;border:1px solid var(--line);border-radius:10px;max-height:46vh;overflow-y:auto}
+.m-list li{padding:9px 12px;border-bottom:1px solid var(--line)}
+.m-list li:last-child{border-bottom:none}
+.m-list .n{color:var(--cream);font-weight:600}
+.m-list .i{font-family:var(--mono);font-size:10.5px;color:var(--amber);margin-left:6px}
+.m-list .a{display:block;font-size:12px;color:var(--cream-dim);margin-top:2px}
+.m-note{margin-top:12px;padding:10px 12px;border-radius:10px;font-size:12.5px;color:var(--amber);border:1px solid rgba(255,176,58,.45);background:rgba(255,176,58,.08)}
+.m-note.ok{color:var(--cream-dim);border-color:var(--line);background:none}
+.m-foot-note{margin-top:12px;font-family:var(--mono);font-size:10.5px;line-height:1.6;color:var(--cream-mute)}
+.m-pdf{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.m-pdf .btn{text-decoration:none;display:inline-flex;align-items:center}
+.m-pdf .btn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+
+/* ---------- TOAST ---------- */
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);z-index:10001;opacity:0;pointer-events:none;
+  max-width:min(560px,92vw);font-family:var(--mono);font-size:12px;letter-spacing:.04em;line-height:1.6;padding:13px 18px;border-radius:11px;
+  border:1px solid var(--line-strong);background:linear-gradient(180deg,var(--panel),var(--panel2));box-shadow:0 18px 50px rgba(0,0,0,.6);transition:.28s}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast.ok{border-color:rgba(127,214,166,.5)}.toast.ok b{color:var(--ok)}
+.toast.warn{border-color:rgba(255,176,58,.5)}.toast.warn b{color:var(--amber)}
+.toast.crit{border-color:rgba(226,59,50,.6)}.toast.crit b{color:var(--red)}
+
+.foot{margin-top:26px;text-align:center;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--cream-mute)}
+.foot a{color:var(--cream-dim);text-decoration:none;border-bottom:1px dotted var(--cream-mute)}
+.foot a:hover{color:var(--amber)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}

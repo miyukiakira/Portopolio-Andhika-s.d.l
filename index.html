@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andhika Samuel — Portofolio</title>
+<meta name="description" content="Portofolio Andhika Samuel Daya Lelunu — internal tools, otomasi, dan digitalisasi proses. Studi kasus Magi System lengkap dengan live demo berdata fiktif.">
+<meta name="author" content="Andhika Samuel Daya Lelunu">
+<meta name="theme-color" content="#0b0907">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Andhika Samuel Daya Lelunu — Internal Tools · Automation · Digitalisasi Proses">
+<meta property="og:description" content="Pembuat Magi System: dari banyak file Excel ke satu database, dashboard, dan otomasi n8n untuk Departemen Mining. Coba live demonya.">
+<!-- Setelah situs online, ganti dengan alamat lengkap, mis. https://username.github.io/portofolio/assets/img/og.png
+     (WhatsApp/LinkedIn/Facebook hanya membaca gambar pratinjau dari URL absolut). -->
+<meta property="og:image" content="assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/porto.css">
+</head>
+<body>
+<!-- Isi halaman (teks, daftar, kontak) ada di assets/js/data.js.
+     Elemen ber-atribut data-isi="..." diisi otomatis oleh assets/js/porto.js. -->
+<canvas id="bintang" aria-hidden="true"></canvas>
+<a class="lewati" href="#isi">Lewati ke konten</a>
+
+<!-- ================= NAVIGASI ================= -->
+<header class="nav" id="nav">
+  <div class="nav-dalam">
+    <a class="merek" href="#atas" aria-label="Ke atas">
+      <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 4l17 9.8v20.4L24 44 7 34.2V13.8z" stroke="#FF6A1F" stroke-width="2.2"/><path d="M24 12l10.4 6v12L24 36l-10.4-6V18z" stroke="#E23B32" stroke-width="1.6" opacity=".8"/><circle cx="24" cy="24" r="3.8" fill="#FFB03A"/></svg>
+      <span data-isi="merek"></span>
+    </a>
+    <nav class="menu" id="menu" aria-label="Navigasi utama">
+      <a href="#tentang">Tentang</a>
+      <a href="#magi">Magi System</a>
+      <a href="#pengalaman">Pengalaman</a>
+      <a href="#keahlian">Keahlian</a>
+      <a href="#kontak">Kontak</a>
+      <a class="tombol kecil utama" href="demo/login.html">Live Demo <span aria-hidden="true">→</span></a>
+    </nav>
+    <button class="burger" id="burger" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="isi">
+<noscript><p class="tanpa-js wadah">Isi portofolio ini ditampilkan dengan JavaScript — aktifkan JavaScript di browser Anda untuk melihatnya.</p></noscript>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="atas">
+  <div class="wadah hero-grid">
+    <div class="hero-teks muncul" data-isi="hero"></div>
+    <div class="hero-foto muncul">
+      <div class="orbit" data-isi="orbit"></div>
+    </div>
+  </div>
+  <div class="wadah">
+    <dl class="angka muncul" aria-label="Magi System dalam angka" data-isi="angka"></dl>
+  </div>
+</section>
+
+<!-- ================= TENTANG ================= -->
+<section class="seksi" id="tentang">
+  <div class="wadah">
+    <div class="kepala muncul"><span class="idx">01</span><h2>Tentang saya</h2></div>
+    <div class="tentang-grid">
+      <div class="muncul" data-isi="tentang"></div>
+      <div class="nilai muncul" data-isi="nilai"></div>
+    </div>
+    <figure class="foto-lebar muncul" data-isi="fotoLebar"></figure>
+  </div>
+</section>
+
+<!-- ================= STUDI KASUS ================= -->
+<section class="seksi" id="magi">
+  <div class="wadah">
+    <div class="kepala muncul"><span class="idx">02</span><h2>Studi kasus · MAGI<b>//</b>SYSTEM</h2></div>
+    <p class="intro muncul" data-isi="intro"></p>
+
+    <!-- demo (akun di sini harus sama dengan AKUN di demo/_demo/ui.js) -->
+    <div class="kartu-demo muncul">
+      <div class="kd-teks">
+        <p class="eyebrow">Live demo · data fiktif</p>
+        <h3>Coba dashboard aslinya langsung di browser.</h3>
+        <p>Halaman dashboard di demo ini adalah <b>kode asli</b> Magi System tanpa diubah. Yang diganti hanya backend-nya: <b>magi-api, MySQL, dan n8n disimulasikan di browser</b> dengan aturan yang sama — validasi, hak akses per fitur, audit log, persetujuan MBR, gerbang cetak AFL, sampai PDF formulir. Isinya <b>246 karyawan fiktif</b> beserta roster ±8 bulan.</p>
+        <div class="akun">
+          <div><b>Administrator</b><code>andhika · MagiAdmin2026</code><span>semua modul + kelola akun</span></div>
+          <div><b>Operator</b><code>siti · MagiOperator2026</code><span>hak terbatas — modul lain terkunci</span></div>
+        </div>
+        <div class="aksi">
+          <a class="tombol utama" href="demo/login.html?demo=admin">Masuk sebagai Administrator <span aria-hidden="true">→</span></a>
+          <a class="tombol" href="demo/login.html?demo=operator">Masuk sebagai Operator</a>
+        </div>
+        <p class="kecil-redup">Perubahan tersimpan di browser Anda saja (localStorage) dan bisa di-reset kapan pun dari pil <b>DEMO</b> di pojok kiri bawah dashboard.</p>
+      </div>
+      <a class="kd-gambar" href="demo/login.html?demo=admin" aria-label="Buka demo Mission Control">
+        <div class="layar">
+          <div class="layar-bar"><i></i><i></i><i></i><span>magi-server.local</span></div>
+          <div class="layar-isi">
+            <div class="li-h"><b>MAGI<em>//</em>SYSTEM</b><span>Mission Control</span></div>
+            <div class="li-tiles"><span><small>Karyawan</small>236</span><span><small>Meal Box</small>644</span><span><small>Lokasi</small>26</span><span><small>Special Cash</small>3</span></div>
+            <div class="li-bars"><i style="--w:42%"></i><i style="--w:39%"></i><i style="--w:2%"></i><i style="--w:16%"></i></div>
+            <div class="li-alert">⏳ MBR menunggu persetujuan Anda</div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- sebelum / sesudah -->
+    <h3 class="sub muncul">Masalah yang diselesaikan</h3>
+    <div class="banding muncul" data-isi="banding"></div>
+
+    <!-- arsitektur -->
+    <h3 class="sub muncul">Arsitektur</h3>
+    <div class="arsitektur muncul">
+      <svg viewBox="0 0 960 360" role="img" aria-labelledby="arsJudul arsDesc">
+        <title id="arsJudul">Arsitektur Magi System</title>
+        <desc id="arsDesc">Browser tim admin terhubung lewat HTTPS ke Caddy. Caddy meneruskan berkas statis ke dashboard dan jalur /webhook ke magi-api. magi-api memeriksa sesi dan hak fitur, membaca dan menulis MySQL, dan meneruskan jalur tertentu ke n8n. n8n membaca MySQL dan memakai Google Sheets, Drive, dan Gmail.</desc>
+        <defs>
+          <marker id="panah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#FF6A1F"/></marker>
+        </defs>
+        <g class="ars-garis">
+          <path d="M150 180H220" marker-end="url(#panah)"/>
+          <path d="M372 150C420 150 420 90 468 90" marker-end="url(#panah)"/>
+          <path d="M372 210C420 210 420 272 468 272" marker-end="url(#panah)"/>
+          <path d="M620 272H690" marker-end="url(#panah)"/>
+          <path d="M620 250C662 250 655 112 690 110" marker-end="url(#panah)"/>
+          <path d="M767 148V230" marker-end="url(#panah)" class="putus"/>
+          <path d="M842 110H866" marker-end="url(#panah)"/>
+        </g>
+        <g class="ars-kotak">
+          <rect x="20" y="140" width="130" height="80" rx="12"/>
+          <rect x="222" y="130" width="150" height="100" rx="12" class="aksen"/>
+          <rect x="470" y="52" width="150" height="76" rx="12"/>
+          <rect x="470" y="232" width="150" height="80" rx="12" class="aksen"/>
+          <rect x="692" y="72" width="150" height="76" rx="12"/>
+          <rect x="692" y="232" width="150" height="80" rx="12"/>
+          <rect x="868" y="72" width="76" height="240" rx="12" class="redup"/>
+        </g>
+        <g class="ars-teks">
+          <text x="85" y="176" class="j">Browser</text><text x="85" y="196">tim admin</text>
+          <text x="297" y="168" class="j">Caddy</text><text x="297" y="188">TLS internal +</text><text x="297" y="205">header keamanan</text>
+          <text x="545" y="86" class="j">Dashboard</text><text x="545" y="106">HTML/CSS/JS murni</text>
+          <text x="545" y="266" class="j">magi-api</text><text x="545" y="286">Node.js · sesi + hak</text>
+          <text x="767" y="106" class="j">n8n</text><text x="767" y="126">MBR · AFL · APD · Warning</text>
+          <text x="767" y="266" class="j">MySQL 9.7</text><text x="767" y="286">db_mining</text>
+          <text x="910" y="192" class="j" transform="rotate(-90 910 192)">Google Sheets · Drive · Gmail</text>
+          <text x="186" y="170" class="lbl">HTTPS</text>
+          <text x="404" y="108" class="lbl" text-anchor="end">berkas statis</text>
+          <text x="410" y="262" class="lbl" text-anchor="end">/webhook/*</text>
+          <text x="655" y="264" class="lbl">SQL</text>
+          <text x="638" y="206" class="lbl" text-anchor="end">proxy terbatas</text>
+          <text x="776" y="194" class="lbl" text-anchor="start">baca / upsert</text>
+        </g>
+      </svg>
+      <ul class="ars-catatan">
+        <li><b>Caddy</b> satu-satunya pintu dari LAN; n8n, magi-api, dashboard, dan MySQL diikat ke <code>127.0.0.1</code>.</li>
+        <li><b>magi-api</b> melayani CRUD dashboard sendiri dan hanya mem-proxy jalur tertentu ke n8n — autentikasi &amp; otorisasi ditegakkan di <b>satu titik</b>.</li>
+        <li><b>n8n</b> menjalankan alur yang menyentuh Google: MBR dengan gerbang persetujuan, Import Roster, cetak AFL/APD/Warning ke PDF, email warning.</li>
+      </ul>
+    </div>
+
+    <!-- modul -->
+    <h3 class="sub muncul"><span data-isi="jumlahModul"></span> modul — klik untuk membukanya di demo</h3>
+    <div class="modul" data-isi="modul"></div>
+
+    <!-- sorotan -->
+    <h3 class="sub muncul">Sorotan teknis</h3>
+    <div class="sorotan" data-isi="sorotan"></div>
+
+    <!-- keamanan + kode -->
+    <div class="dua-kolom">
+      <div class="muncul">
+        <h3 class="sub">Keamanan</h3>
+        <ul class="daftar-cek" data-isi="keamanan"></ul>
+      </div>
+      <div class="muncul">
+        <h3 class="sub">Satu titik penegakan hak</h3>
+<pre class="kode"><code><span class="k">// service/server.js — cukup SALAH SATU hak; Administrator selalu boleh</span>
+<span class="b">const</span> HAK_RUTE = {
+  <span class="s">'POST /webhook/roster-update'</span>: [<span class="s">'edit-roster'</span>],
+  <span class="s">'GET /webhook/karyawan-list'</span>:  [<span class="s">'karyawan'</span>, <span class="s">'absen'</span>, <span class="s">'edit-roster'</span>],
+  <span class="s">'POST /webhook/apd-cetak'</span>:     [<span class="s">'apd'</span>],
+  <span class="s">'POST /webhook/warning-email'</span>: [<span class="s">'warning'</span>],
+  <span class="k">// ...</span>
+};
+<span class="b">if</span> (!bolehHak(sess, HAK_RUTE[key])) {
+  <span class="b">return</span> sendJson(res, <span class="n">403</span>, { status: <span class="s">'forbidden'</span> });
+}</code></pre>
+      </div>
+    </div>
+
+    <h3 class="sub muncul">Tech stack</h3>
+    <ul class="chip-daftar muncul" data-isi="stack"></ul>
+    <p class="catatan-ai muncul" data-isi="catatanAi"></p>
+  </div>
+</section>
+
+<!-- ================= PENGALAMAN ================= -->
+<section class="seksi" id="pengalaman">
+  <div class="wadah">
+    <div class="kepala muncul"><span class="idx">03</span><h2>Pengalaman</h2></div>
+    <ol class="linimasa" data-isi="pengalaman"></ol>
+  </div>
+</section>
+
+<!-- ================= KEAHLIAN ================= -->
+<section class="seksi" id="keahlian">
+  <div class="wadah">
+    <div class="kepala muncul"><span class="idx">04</span><h2>Keahlian</h2></div>
+    <div class="keahlian" data-isi="keahlian"></div>
+    <p class="belajar muncul" data-isi="sedangBelajar"></p>
+
+    <div class="pendidikan">
+      <div class="muncul">
+        <h3 class="sub">Pendidikan</h3>
+        <div data-isi="pendidikan"></div>
+      </div>
+      <div class="muncul">
+        <h3 class="sub">Sertifikasi</h3>
+        <div data-isi="sertifikasi"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KONTAK ================= -->
+<section class="seksi" id="kontak">
+  <div class="wadah">
+    <div class="kontak muncul">
+      <div>
+        <div class="kepala"><span class="idx">05</span><h2>Mari bicara</h2></div>
+        <p class="besar" data-isi="ajakan"></p>
+      </div>
+      <ul class="kontak-daftar" data-isi="kontak"></ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="kaki">
+  <div class="wadah">
+    <p>© <span id="tahun">2026</span> <span data-isi="namaLengkap"></span></p>
+    <p>Dibangun dengan HTML, CSS &amp; JavaScript murni. Demo Magi System memakai data fiktif dan berjalan sepenuhnya di browser.</p>
+  </div>
+</footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/porto.js"></script>
+</body>
+</html>
