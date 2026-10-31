@@ -273,6 +273,9 @@ p { color: var(--krem-2); }
 .lm-isi h3 { margin: 0; font-size: 21px; }
 .lm-tempat { margin: 2px 0 10px; color: var(--krem-redup); font-size: 15px; }
 .lm-isi > p { margin: 0 0 8px; }
+.lm-tugas { margin: 0 0 8px; padding-left: 18px; }
+.lm-tugas li { margin-bottom: 4px; }
+.lm-tugas li::marker { color: var(--oranye); }
 .lm-proyek { margin-top: 16px; padding: 18px 20px; border-radius: var(--r); border: 1px solid var(--garis-kuat); background: rgba(255, 106, 31, .05); }
 .lm-proyek h4 { margin: 0 0 8px; font-size: 16px; color: var(--amber); }
 .lm-proyek h4 span { color: var(--krem-redup); font-weight: 500; font-size: 14px; }

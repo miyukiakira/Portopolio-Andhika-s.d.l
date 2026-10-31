@@ -38,8 +38,9 @@ window.PORTO = {
   tentang: {
     pembuka: 'Mining Production Clerk yang membangun sendiri <b>Magi System</b> — platform internal yang memindahkan administrasi Departemen Mining dari banyak file Excel ke satu database dan dashboard.',
     paragraf: [
-      'Pekerjaan harian saya adalah roster, absensi, dan data karyawan. Dari situ saya melihat pola yang selalu berulang, data yang saling bertentangan antar-file, dan aturan kerja yang hanya “diingat orang”. Saya memindahkan semuanya ke sistem yang menegakkan aturan itu sendiri, mencatat siapa mengubah apa, dan menjalankan pekerjaan rutin secara otomatis.',
-      'Sekarang saya memperdalam <b>DevOps</b>, <b>cloud</b>, dan <b>Machine Learning</b> — melanjutkan hal yang sama ke skala yang lebih besar.'
+      'Pekerjaan harian saya adalah menyusun perhitungan roster kerja, mengolah data kebutuhan manpower, dan mengelola absensi serta data karyawan. Dari situ saya melihat pola yang selalu berulang, data yang saling bertentangan antar-file, dan aturan kerja yang hanya “diingat orang”. Saya memindahkan semuanya ke sistem yang menegakkan aturan itu sendiri, mencatat siapa mengubah apa, dan menjalankan pekerjaan rutin secara otomatis.',
+      'Saya terbiasa <b>berpikir kritis</b> dan <b>memecahkan masalah</b>: mencari akar persoalannya dulu, baru membangun solusinya.',
+      'Sekarang saya memperdalam <b>DevOps</b>, <b>cloud</b>, dan <b>machine learning</b> — melanjutkan hal yang sama ke skala yang lebih besar.'
     ],
     nilai: [
       { ikon: '⌗', judul: 'Merancang', teks: 'Dari masalah lapangan ke skema data: ERD, tabel dengan batasan yang dijaga database (UNIQUE, FK, CHECK, trigger).' },
@@ -109,7 +110,10 @@ window.PORTO = {
       waktu: 'Mar 2024 — sekarang',
       jabatan: 'Mining Production Clerk',
       tempat: 'PT. Bagas Bumi Persada · Departemen Mining',
-      ringkas: 'Administrasi berbasis Excel (roster, absensi, data karyawan) dan manajemen database departemen.',
+      tugas: [                                                   // opsional — daftar tugas berpoin
+        'Menyusun perhitungan roster kerja dan mengolah data kebutuhan manpower departemen.',
+        'Mengelola administrasi berbasis Excel (absensi, data karyawan) dan database departemen sesuai target KPI.'
+      ],
       proyek: {                                                  // opsional — hapus bila tidak ada
         nama: 'Magi System',
         ket: 'inisiatif pribadi · live di server kantor',

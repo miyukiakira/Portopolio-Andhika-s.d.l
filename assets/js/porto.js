@@ -113,6 +113,7 @@
           <h3>${x.jabatan}</h3>
           <p class="lm-tempat">${x.tempat}</p>
           ${jika(x.ringkas, `<p>${x.ringkas}</p>`)}
+          ${jika((x.tugas || []).length, `<ul class="lm-tugas">${list(x.tugas, y => `<li>${y}</li>`)}</ul>`)}
           ${x.proyek ? proyek(x.proyek) : ''}
         </div>
       </li>`),
